@@ -23,6 +23,15 @@
         </span>
     </p>
 
+
+    <td class="border px-4 py-2 text-center">
+        <div class="flex  space-x-4">
+            <a href="{{ route('projects.tasks.index', $project) }}" class="text-gray-400 hover:text-blue-700 ml-2">Ver Tarefas</a>
+            <a href="{{ route('projects.edit', $project) }}" class="text-gray-400 hover:text-blue-700 ml-4">Editar</a>
+            <a href="{{ route('projects.index') }}"class="text-gray-400 hover:text-yellow-700 ml-4">Voltar</a>
+        </div>
+    </td>
+<!--
     <div class="mt-6">
         <a href="{{ route('projects.tasks.index', $project) }}"
             class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 ml-2">
@@ -32,6 +41,6 @@
             class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 ml-2">Editar</a>
         <a href="{{ route('projects.index') }}"
             class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 ml-1">Voltar</a>
-    </div>
+    </div> -->
 </div>
 @endsection
