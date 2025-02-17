@@ -20,7 +20,16 @@
             @foreach($projects as $project)
             <tr class="hover:bg-gray-100 transition relative">
                 <td class="border px-4 py-2">{{ $project->eid }}</td>
-                <td class="border px-4 py-2">{{ $project->name }}</td>
+                <td class="border px-4 py-2">
+                    @if ($project->hasDueTodayTasks())
+                        <span class="text-red-500 font-bold" title="Este projeto tem tarefas vencendo HOJE">🔴</span>
+                    @elseif ($project->hasDueTomorrowTasks())
+                        <span class="text-yellow-500 font-bold" title="Este projeto tem tarefas vencendo AMANHÃ">🟡</span>
+                    @endif
+
+                    <span class="ml-2">{{ $project->name }}</span>
+                </td>
+
                 <td class="border px-4 py-2 capitalize">{{ $project->status }}</td>
                 <td class="border px-4 py-2 text-center">
                     <div class="flex justify-center items-center space-x-4">

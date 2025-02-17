@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Carbon\Carbon;
 
 class Task extends Model
 {
@@ -27,5 +28,15 @@ class Task extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function isDueToday()
+    {
+        return $this->due_date === Carbon::today()->toDateString();
+    }
+
+    public function isDueTomorrow()
+    {
+        return $this->due_date === Carbon::tomorrow()->toDateString();
     }
 }
