@@ -50,8 +50,6 @@
                         <button onclick="openModal('{{ route('projects.tasks.destroy', [$project, $task])}}')"
                             class="text-gray-400 hover:text-red-700 ml-2">Excluir</button>
 
-
-
                     </div>
                 </td>
             </tr>
