@@ -14,6 +14,12 @@
         Voltar
     </a>
 
+    <a  href="{{ route('tasks.export', ['projectId' => $project->id, 'format' => 'csv']) }}"
+        class="text-gray-400 hover:text-blue-700 ml-2">Exportar CSV</a>
+
+        <a  href="{{ Route('tasks.export', ['projectId' => $project->id, 'format' => 'xlsx']) }}"
+        class="text-gray-400 hover:text-blue-700 ml-2">Exportar XLSX</a>
+
     <table class="w-full mt-6 border-collapse border border-gray-300 shadow-sm">
         <thead>
             <tr class="bg-gray-200">
