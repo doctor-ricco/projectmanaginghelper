@@ -14,10 +14,6 @@
         <!-- Estatísticas (Metade Esquerda) -->
         <div class="flex-1 grid grid-cols-2 gap-2">
             <div class="p-6 border rounded-lg shadow-sm">
-                <h2 class="text-lg font-semibold">Total</h2>
-                <p class="text-3xl font-bold text-blue-600">{{ $totalProjects }}</p>
-            </div>
-            <div class="p-6 border rounded-lg shadow-sm">
                 <h2 class="text-lg font-semibold">Planeados</h2>
                 <p class="text-3xl font-bold" style="color: #d3d3d3;">{{ $projectStages['planned'] }}</p>
             </div>
@@ -35,6 +31,10 @@
             <div class="p-6 border rounded-lg shadow-sm">
                 <h2 class="text-lg font-semibold">Concluídos</h2>
                 <p class="text-3xl font-bold" style="color: #10b981;">{{ $projectStages['completed'] }}</p>
+            </div>
+            <div class="p-6 border rounded-lg shadow-sm">
+                <h2 class="text-lg font-semibold">Total</h2>
+                <p class="text-3xl font-bold text-blue-600">{{ $totalProjects }}</p>
             </div>
 
         </div>
@@ -56,7 +56,7 @@
         var projectsChart = new Chart(ctx, {
             type: "pie",
             data: {
-                labels: ["Planeada", "Iniciada", "Em Andamento", "Concluída"],
+                labels: ["Planeado", "Iniciado", "Em Andamento", "Concluído"],
                 datasets: [{
                     data: [
                         {{ $projectStages['planned'] }},
@@ -103,10 +103,6 @@
         <!-- Estatísticas (Metade Esquerda) -->
         <div class="flex-1 grid grid-cols-2 gap-2">
             <div class="p-6 border rounded-lg shadow-sm">
-                <h2 class="text-lg font-semibold">Total de Tarefas</h2>
-                <p class="text-3xl font-bold text-blue-600">{{ $totalTasks }}</p>
-            </div>
-            <div class="p-6 border rounded-lg shadow-sm">
                 <h2 class="text-lg font-semibold">Planeadas</h2>
                 <p class="text-3xl font-bold" style="color: #d3d3d3;">{{ $plannedTasks }}</p>
             </div>
@@ -124,6 +120,10 @@
             <div class="p-6 border rounded-lg shadow-sm">
                 <h2 class="text-lg font-semibold">Concluídas</h2>
                 <p class="text-3xl font-bold" style="color: #10b981;">{{ $completedTasks }}</p>
+            </div>
+            <div class="p-6 border rounded-lg shadow-sm">
+                <h2 class="text-lg font-semibold">Total</h2>
+                <p class="text-3xl font-bold text-blue-600">{{ $totalTasks }}</p>
             </div>
 
         </div>
