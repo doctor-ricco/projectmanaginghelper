@@ -56,7 +56,7 @@
         var projectsChart = new Chart(ctx, {
             type: "pie",
             data: {
-                labels: ["Planeado", "Iniciado", "Em Andamento", "Concluído"],
+                labels: ["Planeado", "Iniciado", "Em Andamento", "Concluíd"],
                 datasets: [{
                     data: [
                         {{ $projectStages['planned'] }},

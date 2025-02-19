@@ -46,10 +46,18 @@ class ProjectController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show(Project $project)
     {
-        return view('projects.show', compact('project'));
+        $plannedTasks = $project->tasks()->where('status', 'planned')->count();
+        $startedTasks = $project->tasks()->where('status', 'started')->count();
+        $inProgressTasks = $project->tasks()->where('status', 'in_progress')->count();
+        $completedTasks = $project->tasks()->where('status', 'completed')->count();
+
+        return view('projects.show', compact('project', 'plannedTasks', 'startedTasks', 'inProgressTasks', 'completedTasks'));
     }
+
+
 
     /**
      * Show the form for editing the specified resource.

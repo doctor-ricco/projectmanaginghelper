@@ -3,14 +3,17 @@
 @section('title', 'Lista de Projetos')
 
 @section('content')
+
+<div class="bg-white p-6 rounded-lg shadow flex items-center gap-8 w-full">
+
 <div class="max-w-4xl mx-auto bg-white p-6 rounded shadow">
     <h1 class="text-3xl font-bold mb-6">Projetos</h1>
     <a href="{{ route('projects.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Novo Projeto</a>
         <a  href="{{ route('projects.export', 'csv') }}"
         class="text-gray-400 hover:text-blue-700 ml-2">Exportar CSV</a>
 
-        <a  href="{{ route('projects.export', 'xlsx') }}"
-        class="text-gray-400 hover:text-blue-700 ml-2">Exportar XLSX</a>
+        <!-- <a  href="{{ route('projects.export', 'xlsx') }}"
+        class="text-gray-400 hover:text-blue-700 ml-2">Exportar XLSX</a> -->
 
     <table class="w-full mt-6 border-collapse border border-gray-300 shadow-sm">
         <thead>
@@ -47,6 +50,7 @@
             @endforeach
         </tbody>
     </table>
+</div>
 </div>
 
 <!-- Modal de Confirmação -->
